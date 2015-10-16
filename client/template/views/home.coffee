@@ -3,3 +3,10 @@ Template.home.events
     e.preventDefault()
 
     $(e.target).toggleClass('loading')
+
+  'click .open': (e)->
+    e.preventDefault()
+
+    MODAL.init('.modal',
+      overlay: true
+    )

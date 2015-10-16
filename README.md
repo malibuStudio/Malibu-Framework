@@ -64,3 +64,17 @@ To add an overlay when modal is opened, add `data-overlay="true"` to the trigger
 button.btn(data-action="modal" data-target=".modal" data-overlay="true")
   | Open with Overlay
 ```
+
+#### Shorthand Modal Trigger
+
+If you do not want to use the markup way of triggering a modal for whatever reason or situation, you can trigger a modal like so.
+
+```
+# Open modal
+MODAL.init('.modal',
+  overlay: true
+)
+
+# Close an already open modal
+MODAL.close('.modal')
+```

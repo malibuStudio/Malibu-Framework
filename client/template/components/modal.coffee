@@ -35,7 +35,7 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
     MODAL.open($modal, obj)
 
     # If overlay is true, add close event handler to overlay as well
-    if obj.overlay is true
+    if obj and obj.overlay is true
       $('.close', $modal).add('.modal-overlay').on('click', (e)->
         e.preventDefault()
         MODAL.close($modal, obj)
@@ -48,7 +48,7 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
 
   # Open Modal
   open: ($modal, obj)->
-    if obj.overlay is true
+    if obj and obj.overlay is true
       overlay = $(document.createElement('div')).addClass('modal-overlay')
       $('#viewport').append(overlay)
 
@@ -74,7 +74,7 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
       display: 'none'
       clearProps: 'all'
     # Close Modal Overlay GSAP
-    if obj.overlay is true
+    if $('.modal-overlay').length isnt 0
       TweenMax.to '.modal-overlay', MODAL.duration.close,
         opacity: 0,
         clearProps: 'all'
