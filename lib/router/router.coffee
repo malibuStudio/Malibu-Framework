@@ -3,4 +3,4 @@
 # =============================================================================
 Router.route '/',
   name: 'home'
-  layout: 'layout'
+  layoutTemplate: 'layout'
