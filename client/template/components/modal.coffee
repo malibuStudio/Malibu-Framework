@@ -32,14 +32,26 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
     $modal = $(modal)
 
     # Open Modal
-    unless obj and obj.overlay is false
-      overlay = $(document.createElement('div')).addClass('modal-overlay')
-      $('#viewport').append(overlay)
+    # unless obj and obj.overlay is false
+    # overlay = $(document.createElement('div')).addClass('modal-overlay')
+    # $('#viewport').append(overlay)
 
-      TweenMax.to '.modal-overlay', MODAL.duration.open,
-        opacity: 1
-        onComplete: ->
-          $(overlay).css('pointer-events', 'auto')
+    # TweenMax.to '.modal-overlay', MODAL.duration.open,
+    #   opacity: 1
+    #   onComplete: ->
+    #     $(overlay).css('pointer-events', 'auto')
+    overlay = $(document.createElement('div')).addClass('modal-overlay')
+    $('#viewport').append(overlay)
+
+    if obj and obj.overlay is false
+      overlayOpacity = 0
+    else
+      overlayOpacity = 1
+
+    TweenMax.to '.modal-overlay', MODAL.duration.open,
+      opacity: overlayOpacity
+      onComplete: ->
+        $(overlay).css('pointer-events', 'auto')
 
     TweenMax.to $modal, 0,
       display: 'block'
@@ -49,16 +61,16 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
       opacity: 1
 
     # If overlay is false, add close event handler to .modal > .close only
-    if obj and obj.overlay is false
-      $('.close', $modal).on('click', (e)->
-        e.preventDefault()
-        MODAL.close($modal, obj)
-      )
-    else
-      $('.close', $modal).add('.modal-overlay').on('click', (e)->
-        e.preventDefault()
-        MODAL.close($modal, obj)
-      )
+    # if obj and obj.overlay is false
+    #   $('.close', $modal).on('click', (e)->
+    #     e.preventDefault()
+    #     MODAL.close($modal, obj)
+    #   )
+    # else
+    $('.close', $modal).add('.modal-overlay').on('click', (e)->
+      e.preventDefault()
+      MODAL.close($modal, obj)
+    )
 
 
   # Close Modal
@@ -70,12 +82,12 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
       display: 'none'
       clearProps: 'all'
     # Close Modal Overlay GSAP
-    if $('.modal-overlay').length isnt 0
-      TweenMax.to '.modal-overlay', MODAL.duration.close,
-        opacity: 0,
-        clearProps: 'all'
-        onComplete: ->
-          $('.modal-overlay').remove()
+    # if $('.modal-overlay').length isnt 0
+    TweenMax.to '.modal-overlay', MODAL.duration.close,
+      opacity: 0,
+      clearProps: 'all'
+      onComplete: ->
+        $('.modal-overlay').remove()
 
 
 

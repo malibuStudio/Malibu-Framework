@@ -11,16 +11,25 @@ Made with love :heart: by Malibu Studio
 - Coffeescript
 - GSAP
 
-The packages in the above list is already includes in the `packages` file.
+The packages in the above list is already includes in the `.meteor/packages` file.
 
+---
+
+## Global
+- Typography (wip)
+-  Flex (wip)
+
+---
 
 ## UI Components
 - Buttons
 - Modal
 
+---
+
 ### Buttons
 
-
+---
 
 ### Modal
 
@@ -85,3 +94,14 @@ MODAL.open('.modal',
 # Close an already open modal
 MODAL.close('.modal')
 ```
+
+### Modal Variations
+```
+// Sets Modal Color to @brand-primary
+.modal.modal-primary
+
+// Box Shadow on Modal
+.modal.modal-shadow
+```
+
+---

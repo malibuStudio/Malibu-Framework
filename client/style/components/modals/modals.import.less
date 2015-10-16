@@ -29,6 +29,7 @@
   transform: translate3d(-50%, -50%, 0) scale(0.5);
 
 
+  // Modal Heading Margin Removal
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 0;
@@ -59,7 +60,6 @@
 .modal-header {
   position: relative;
   padding: @pad-sm @pad-lg @pad-sm @pad-md;
-  // background: RGBA(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -116,4 +116,21 @@
   &:hover {
     opacity: 0.35;
   }
+}
+
+
+
+
+// ============================================================================
+// Modal Variations - color
+// ============================================================================
+.modal.modal-primary {
+  background: @brand-primary;
+}
+
+// ============================================================================
+// Modal Variations - shadow
+// ============================================================================
+.modal.modal-shadow {
+  box-shadow: @modal-shadow;
 }
