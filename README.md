@@ -1,6 +1,10 @@
 # MALIBU
 Made with love :heart: by Malibu Studio
 
+## Intro
+**DEMO:** http://malibu-framework.meteor.com
+
+
 ## Prerequesites
 - Jade Templating Engine
 - LESS (with autoprefixer)
@@ -56,13 +60,13 @@ To close a modal, simply add `.close` to the element that would trigger the moda
       | Close
 ```
 
-#### Adding Modal Overlay
+#### Remove Modal Overlay
 
-To add an overlay when modal is opened, add `data-overlay="true"` to the triggering element.
+To remove an overlay when modal is opened, add `data-overlay="false"` to the triggering element.
 
 ```
-button.btn(data-action="modal" data-target=".modal" data-overlay="true")
-  | Open with Overlay
+button.btn(data-action="modal" data-target=".modal" data-overlay="false")
+  | Open without Overlay
 ```
 
 #### Shorthand Modal Trigger
@@ -71,8 +75,11 @@ If you do not want to use the markup way of triggering a modal for whatever reas
 
 ```
 # Open modal
-MODAL.init('.modal',
-  overlay: true
+MODAL.open('.modal')
+
+# Open modal without overlay
+MODAL.open('.modal',
+  overlay: false
 )
 
 # Close an already open modal

@@ -7,6 +7,6 @@ Template.home.events
   'click .open': (e)->
     e.preventDefault()
 
-    MODAL.init('.modal',
-      overlay: true
+    MODAL.open('.modal',
+      overlay: false
     )

@@ -16,7 +16,7 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
   obj =
     overlay: $obj.overlay
 
-  MODAL.init($el, obj)
+  MODAL.open($el, obj)
 
 # ========================================================================
 # MODAL Object
@@ -28,27 +28,11 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
     close: 0.3
 
   # Init
-  init: (modal, obj)->
+  open: (modal, obj)->
     $modal = $(modal)
 
     # Open Modal
-    MODAL.open($modal, obj)
-
-    # If overlay is true, add close event handler to overlay as well
-    if obj and obj.overlay is true
-      $('.close', $modal).add('.modal-overlay').on('click', (e)->
-        e.preventDefault()
-        MODAL.close($modal, obj)
-      )
-    else
-      $('.close', $modal).on('click', (e)->
-        e.preventDefault()
-        MODAL.close($modal, obj)
-      )
-
-  # Open Modal
-  open: ($modal, obj)->
-    if obj and obj.overlay is true
+    unless obj and obj.overlay is false
       overlay = $(document.createElement('div')).addClass('modal-overlay')
       $('#viewport').append(overlay)
 
@@ -63,6 +47,18 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
     TweenMax.to $modal, MODAL.duration.open,
       scale: 1
       opacity: 1
+
+    # If overlay is false, add close event handler to .modal > .close only
+    if obj and obj.overlay is false
+      $('.close', $modal).on('click', (e)->
+        e.preventDefault()
+        MODAL.close($modal, obj)
+      )
+    else
+      $('.close', $modal).add('.modal-overlay').on('click', (e)->
+        e.preventDefault()
+        MODAL.close($modal, obj)
+      )
 
 
   # Close Modal
