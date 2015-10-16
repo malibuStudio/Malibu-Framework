@@ -12,6 +12,12 @@ template(name="home")
         button.close.btn-black Close
 
   .group
+    .malibu-tags
+      label TAGS
+      #tags(data-action="tags")
+
+
+  .group
     h1 Modals!!
     button.btn.btn-primary.btn-xl(data-action="modal" data-target=".modal" data-overlay="true")
       | Open Modal

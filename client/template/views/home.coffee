@@ -10,3 +10,8 @@ Template.home.events
     MODAL.open('.modal',
       overlay: false
     )
+
+Template.home.onRendered ->
+  TAGS('tags',
+    placeholder: '#Tag'
+  )

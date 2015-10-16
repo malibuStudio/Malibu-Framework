@@ -31,16 +31,8 @@ $(document).delegate '[data-action=modal]', 'click', (e)->
   open: (modal, obj)->
     $modal = $(modal)
 
-    # Open Modal
-    # unless obj and obj.overlay is false
-    # overlay = $(document.createElement('div')).addClass('modal-overlay')
-    # $('#viewport').append(overlay)
-
-    # TweenMax.to '.modal-overlay', MODAL.duration.open,
-    #   opacity: 1
-    #   onComplete: ->
-    #     $(overlay).css('pointer-events', 'auto')
     overlay = $(document.createElement('div')).addClass('modal-overlay')
+
     $('#viewport').append(overlay)
 
     if obj and obj.overlay is false

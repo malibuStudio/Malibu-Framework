@@ -19,17 +19,17 @@ The packages in the above list is already includes in the `.meteor/packages` fil
 - Typography (wip)
 -  Flex (wip)
 
----
+
 
 ## UI Components
 - Buttons
 - Modal
 
----
+
 
 ### Buttons
 
----
+
 
 ### Modal
 
@@ -104,4 +104,3 @@ MODAL.close('.modal')
 .modal.modal-shadow
 ```
 
----
