@@ -16,6 +16,8 @@ The packages in the above list is already includes in the `packages` file.
 
 ### Buttons
 
+
+
 ### Modal
 
 #### Basic Modal Structure
@@ -34,6 +36,8 @@ The packages in the above list is already includes in the `packages` file.
       button.close.btn-black Close
 ```
 
+#### Triggering a Modal
+
 To trigger a modal simply add `data-action="modal"` and `data-target="modal target here"` to the element to trigger the modal.
 
 ```
@@ -41,3 +45,13 @@ button.btn.btn-primary.btn-xl(data-action="modal" data-target=".modal")
   | Open Modal
 ```
 
+### Closing a Modal
+
+To close a modal, simply add `.close` to the element that would trigger the modal. The triggering element has to be inside modal itself.
+
+```
+.modal
+  .modal-footer
+    button.btn.btn-black.close
+      | Close
+```
