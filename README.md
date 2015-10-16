@@ -55,3 +55,12 @@ To close a modal, simply add `.close` to the element that would trigger the moda
     button.btn.btn-black.close
       | Close
 ```
+
+### Adding Modal Overlay
+
+To add an overlay when modal is opened, add `data-overlay="true"` to the triggering element.
+
+```
+button.btn(data-action="modal" data-target=".modal" data-overlay="true")
+  | Open with Overlay
+```
