@@ -45,7 +45,7 @@ button.btn.btn-primary.btn-xl(data-action="modal" data-target=".modal")
   | Open Modal
 ```
 
-### Closing a Modal
+#### Closing a Modal
 
 To close a modal, simply add `.close` to the element that would trigger the modal. The triggering element has to be inside modal itself.
 
@@ -56,7 +56,7 @@ To close a modal, simply add `.close` to the element that would trigger the moda
       | Close
 ```
 
-### Adding Modal Overlay
+#### Adding Modal Overlay
 
 To add an overlay when modal is opened, add `data-overlay="true"` to the triggering element.
 
