@@ -34,7 +34,7 @@ The packages in the above list is already includes in the `packages` file.
       button.close.btn-black Close
 ```
 
-To trigger a modal simply add `data-action="modal" and `data-target="modal target here"` to the element to trigger the modal.
+To trigger a modal simply add `data-action="modal"` and `data-target="modal target here"` to the element to trigger the modal.
 
 ```
 button.btn.btn-primary.btn-xl(data-action="modal" data-target=".modal")
